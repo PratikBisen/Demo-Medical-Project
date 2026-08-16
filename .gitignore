@@ -1,0 +1,13 @@
+# Dependencies
+flow_pharma_WEB/apps/web/node_modules/
+
+# Next.js generated files
+flow_pharma_WEB/apps/web/.next/
+
+# Environment
+flow_pharma_WEB/.env
+
+# Python
+flow_pharma_WEB/.venv/
+flow_pharma_WEB/**/__pycache__/
+flow_pharma_WEB/**/*.pyc

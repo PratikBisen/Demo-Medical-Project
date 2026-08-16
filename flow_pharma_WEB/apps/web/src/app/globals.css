@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clinical Alabaster & Forest Emerald Light Mode */
+    --background: 150 15% 98%;
+    --foreground: 160 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 25% 10%;
+    --primary: 158 65% 28%;
+    --primary-foreground: 150 20% 98%;
+    --secondary: 150 15% 94%;
+    --secondary-foreground: 160 25% 12%;
+    --muted: 150 12% 94%;
+    --muted-foreground: 155 12% 42%;
+    --accent: 175 75% 32%;
+    --accent-foreground: 150 20% 98%;
+    --destructive: 0 74% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 12% 88%;
+    --input: 150 12% 86%;
+    --ring: 158 65% 28%;
+    --radius: 0.875rem;
+
+    /* Schedule colors */
+    --schedule-h: 38 92% 45%;
+    --schedule-h1: 345 75% 48%;
+    --schedule-x: 270 70% 50%;
+    --schedule-otc: 158 65% 32%;
+  }
+
+  .dark {
+    /* Obsidian & Botanical Jade Dark Mode */
+    --background: 155 20% 6%;
+    --foreground: 150 15% 96%;
+    --card: 155 18% 9%;
+    --card-foreground: 150 15% 96%;
+    --popover: 155 18% 9%;
+    --popover-foreground: 150 15% 96%;
+    --primary: 158 65% 44%;
+    --primary-foreground: 155 30% 6%;
+    --secondary: 155 15% 14%;
+    --secondary-foreground: 150 15% 96%;
+    --muted: 155 14% 13%;
+    --muted-foreground: 155 10% 62%;
+    --accent: 175 65% 44%;
+    --accent-foreground: 155 30% 6%;
+    --destructive: 0 68% 54%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 155 14% 17%;
+    --input: 155 14% 19%;
+    --ring: 158 65% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-foreground;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.45);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle frosted clinical surfaces */
+.clinical-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.clinical-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.clinical-card-hover:hover {
+  border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 10px 25px -5px rgba(15, 81, 50, 0.06), 0 8px 10px -6px rgba(15, 81, 50, 0.04);
+  transform: translateY(-1px);
+}
