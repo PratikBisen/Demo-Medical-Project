@@ -1,5 +1,5 @@
 """
-Deterministic Pharmacy Safety & Policy Engine
+Deterministic Pharmacy 
 Strictly evaluated backend rules — independent of LLM hallucinations.
 """
 from typing import Dict, Any, Optional
